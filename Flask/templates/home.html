@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Productivity Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex flex-col min-h-screen">
+        <!-- Navigation -->
+        <nav class="bg-blue-600 text-white p-4 shadow-md">
+            <div class="container mx-auto flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Productivity Prediction</h1>
+                <div>
+                    <a href="/" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Home</a>
+                    <a href="/about" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">About</a>
+                    <a href="/predict" class="ml-4 inline-block bg-white text-blue-600 font-semibold px-4 py-2 rounded-lg shadow hover:bg-gray-50">
+                        Start Predicting
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!-- Hero Section -->
+        <main class="flex-grow container mx-auto p-8 text-center">
+            <div class="bg-white p-12 rounded-lg shadow-xl mt-10">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    Garment Worker Productivity Prediction
+                </h2>
+                <p class="text-lg text-gray-600 mb-8">
+                    Use machine learning to forecast team productivity.
+                </p>
+                <a href="/predict" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300">
+                    Get Started
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

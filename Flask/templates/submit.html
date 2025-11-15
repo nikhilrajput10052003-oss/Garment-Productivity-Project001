@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex flex-col min-h-screen">
+        <!-- Navigation -->
+        <nav class="bg-blue-600 text-white p-4 shadow-md">
+            <div class="container mx-auto flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Productivity Prediction</h1>
+                <div>
+                    <a href="/" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Home</a>
+                    <a href="/about" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">About</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Content Section -->
+        <main class="flex-grow container mx-auto p-8 text-center">
+            <div class="bg-white p-12 rounded-lg shadow-xl mt-20 max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Prediction Result</h2>
+                <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-blue-600">
+                        <!-- This is where the prediction from Flask will be shown -->
+                        {{ prediction_text }}
+                    </h3>
+                </div>
+                <a href="/predict" class="mt-8 inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700">
+                    Make Another Prediction
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

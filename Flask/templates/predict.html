@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Productivity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Productivity Prediction</h1>
+            <div>
+                <a href="/" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Home</a>
+                <a href="/about" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">About</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Form Section -->
+    <main class="flex-grow container mx-auto p-8">
+        <div class="bg-white p-10 rounded-lg shadow-xl mt-10 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Enter Parameters for Prediction</h2>
+            
+            <!-- This form points to the "/submit" route -->
+            <form action="/submit" method="POST">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <div>
+                        <label for="quarter" class="block text-sm font-medium text-gray-700">Quarter (0-4)</label>
+                        <input type="number" step="1" id="quarter" name="quarter" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 0 (for Quarter1)">
+                    </div>
+                    <div>
+                        <label for="department" class="block text-sm font-medium text-gray-700">Department (0=finishing, 1=sweing)</label>
+                        <input type="number" step="1" id="department" name="department" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 1 (for sweing)">
+                    </div>
+                    <div>
+                        <label for="day" class="block text-sm font-medium text-gray-700">Day (0=Monday, 1=Saturday...)</label>
+                        <input type="number" step="1" id="day" name="day" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 3 (for Thursday)">
+                    </div>
+                    <div>
+                        <label for="team" class="block text-sm font-medium text-gray-700">Team (1-12)</label>
+                        <input type="number" step="1" id="team" name="team" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 8">
+                    </div>
+                    <div>
+                        <label for="targeted_productivity" class="block text-sm font-medium text-gray-700">Targeted Productivity (0.1-0.8)</label>
+                        <input type="number" step="0.01" id="targeted_productivity" name="targeted_productivity" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 0.80">
+                    </div>
+                    <div>
+                        <label for="smv" class="block text-sm font-medium text-gray-700">SMV</label>
+                        <input type="number" step="0.01" id="smv" name="smv" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 22.5">
+                    </div>
+                    <div>
+                        <label for="over_time" class="block text-sm font-medium text-gray-700">Over Time (minutes)</label>
+                        <input type="number" step="1" id="over_time" name="over_time" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 3600">
+                    </div>
+                    <div>
+                        <label for="incentive" class="block text-sm font-medium text-gray-700">Incentive</label>
+                        <input type="number" step="1" id="incentive" name="incentive" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 50">
+                    </div>
+                    <div>
+                        <label for="idle_time" class="block text-sm font-medium text-gray-700">Idle Time</label>
+                        <input type="number" step="0.1" id="idle_time" name="idle_time" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 0.0">
+                    </div>
+                    <div>
+                        <label for="idle_men" class="block text-sm font-medium text-gray-700">Idle Men</label>
+                        <input type="number" step="1" id="idle_men" name="idle_men" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 0">
+                    </div>
+                    <div>
+                        <label for="no_of_style_change" class="block text-sm font-medium text-gray-700">No. of Style Changes</label>
+                        <input type="number" step="1" id="no_of_style_change" name="no_of_style_change" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 0">
+                    </div>
+                    <div>
+                        <label for="no_of_workers" class="block text-sm font-medium text-gray-700">No. of Workers</label>
+                        <input type="number" step="0.1" id="no_of_workers" name="no_of_workers" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 58.0">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="month" class="block text-sm font-medium text-gray-700">Month (1-12)</label>
+                        <input type="number" step="1" id="month" name="month" required class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 3">
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <div class="mt-8 text-center">
+                    <button type="submit" class="w-full md:w-1/2 bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
