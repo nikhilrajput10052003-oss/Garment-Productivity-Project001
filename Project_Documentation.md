@@ -22,5 +22,6 @@ Routing:
 Prediction Logic (/submit):
 The app receives the 13 numeric inputs from the form.
 It passes these 13 numbers to the loaded model for prediction.
-It uses if/elif/else logic (as per the internship screenshots) to classify the numeric prediction into "averagely productive," "medium productive," or "Highly productive."
+It uses if/elif/else logic (as per the internship screenshots) to classify the numeric prediction into "medium productive," or "Highly productive."
+
 This final text is displayed on the submit.html page.
